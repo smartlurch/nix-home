@@ -24,8 +24,6 @@
     # # "Hello, world!" when run.
     pkgs.hello
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-#    pkgs.neovim
-   # pkgs.tmux
     pkgs.ranger
     pkgs.bat
     pkgs.zoxide
