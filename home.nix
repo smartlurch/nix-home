@@ -20,10 +20,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    pkgs.hello
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "FantasqueSansMono" ]; })
     pkgs.ranger
     pkgs.bat
     pkgs.zoxide
@@ -34,12 +31,6 @@
     pkgs.fd
     pkgs.bottom
     pkgs.just
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -79,16 +70,29 @@
   #  /etc/profiles/per-user/eddie/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "nvim";
+     #EDITOR = "nvim";
   };
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      #plenary-nvim
+      dracula-vim
+      #gruvbox-material
+      #mini-nvim
+    ];
     extraConfig = ''
       set number relativenumber
       set expandtab
       set tabstop=2
       set shiftwidth=2
+      colorscheme dracula
     '';
   };
 
