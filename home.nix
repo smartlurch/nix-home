@@ -126,18 +126,24 @@
       set -g status-position top
 	  '';
     plugins = with pkgs.tmuxPlugins; [
-		  sensible
+		  #sensible
 	    vim-tmux-navigator
       yank
 		  {
 			  plugin = dracula;
 			  extraConfig = ''
-				  set -g @dracula-show-battery false
+				  set -g @dracula-show-battery true
 				  set -g @dracula-show-powerline true
+          set -g @dracula-plugins "cpu-usage ram-usage git time"
 				  set -g @dracula-refresh-rate 10
-          # set -g @dracula-plugins "weather"
           set -g @dracula-show-flags true
           set -g @dracula-show-left-icon session
+          set -g @dracula-cpu-usage-label "CPU"
+          set -g @dracula-ram-usage-label "RAM"
+          # available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, kubernetes-context, synchronize-panes
+          set -g @dracula-show-empty-plugins false
+          set -g @dracula-show-location false
+          set -g @dracula-fixed-location "Metairie, La"
 			  '';
 		  }
 	  ];  
