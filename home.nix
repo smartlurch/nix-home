@@ -93,6 +93,18 @@
       set tabstop=2
       set shiftwidth=2
       colorscheme dracula
+      set smartindent
+      set autoindent
+      set spell
+      set history=1000
+      filetype on
+      filetype plugin on
+      filetype indent on
+      syntax on
+      set cursorline
+      set scrolloff=10
+      set hlsearch
+      set nowrap
     '';
   };
 
@@ -138,6 +150,7 @@
   };
 
   programs.gitui.enable = true;
+  programs.lazygit.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
