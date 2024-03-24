@@ -87,6 +87,7 @@
       #plenary-nvim
       dracula-vim
       #gruvbox-material
+      vim-visual-multi
       #mini-nvim
     ];
     extraConfig = ''
@@ -129,7 +130,7 @@
 	  '';
     plugins = with pkgs.tmuxPlugins; [
 		  #sensible
-      powerline
+      #powerline
 	    vim-tmux-navigator
       yank
 		  {
