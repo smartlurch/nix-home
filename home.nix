@@ -127,6 +127,9 @@
       bind-key k select-pane -U
       bind-key l select-pane -R
       set -g status-position top
+      # Start windows and panes at 1, not 0
+      set -g base-index 1
+      setw -g pane-base-index 1
 	  '';
     plugins = with pkgs.tmuxPlugins; [
 		  #sensible
