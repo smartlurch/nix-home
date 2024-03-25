@@ -159,18 +159,23 @@
           set -g @resurrect-strategy-vim 'session'
           set -g @resurrect-strategy-nvim 'session'
           set -g @resurrect-capture-pane-contents 'on'
+          resurrect_dir="$HOME/.tmux/resurrect"
+          set -g @resurrect-dir $resurrect_dir
+          set -g @resurrect-capture-pane-contents 'on'
+          set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
+          set -g @resurrect-processes '"~nvim"'
           '';
-      }
-      {
-          plugin = continuum;
-          extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-boot 'on'
-          set -g @continuum-save-interval '10'
-          '';
-      }
-    ];  
-  };
+        }
+        {
+            plugin = continuum;
+            extraConfig = ''
+            set -g @continuum-restore 'on'
+            set -g @continuum-boot 'on'
+            set -g @continuum-save-interval '10'
+            '';
+        }
+      ];  
+    };
 
   programs.git = {
     enable = true;
