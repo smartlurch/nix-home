@@ -126,6 +126,10 @@
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
+      bind - split-window -h # Split panes horizontal
+      bind \ split-window -v # Split panes vertically
+      
+
       set -g status-position top
       # Start windows and panes at 1, not 0
       set -g base-index 1
