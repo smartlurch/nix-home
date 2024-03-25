@@ -27,7 +27,7 @@
     pkgs.htop
     pkgs.eza
     pkgs.dust
-    pkgs.dua
+   pkgs.dua
     pkgs.fd
     pkgs.bottom
     pkgs.just
@@ -133,7 +133,6 @@
 	  '';
     plugins = with pkgs.tmuxPlugins; [
 		  #sensible
-      #powerline
 	    vim-tmux-navigator
       yank
 		  {
@@ -154,8 +153,8 @@
 			  '';
 		  }
 	    {
-          plugin = resurrect;
-          extraConfig = ''
+        plugin = resurrect;
+        extraConfig = ''
           set -g @resurrect-strategy-vim 'session'
           set -g @resurrect-strategy-nvim 'session'
           set -g @resurrect-capture-pane-contents 'on'
@@ -164,16 +163,16 @@
           set -g @resurrect-capture-pane-contents 'on'
           set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
           set -g @resurrect-processes '"~nvim"'
-          '';
-        }
-        {
-            plugin = continuum;
-            extraConfig = ''
+        '';
+      }
+      {
+          plugin = continuum;
+          extraConfig = ''
             set -g @continuum-restore 'on'
             set -g @continuum-boot 'on'
             set -g @continuum-save-interval '10'
-            '';
-        }
+          '';
+      }
       ];  
     };
 
