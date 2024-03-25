@@ -126,8 +126,8 @@
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
-      bind - split-window -h # Split panes horizontal
-      bind \ split-window -v # Split panes vertically
+      bind-key - split-window -h # Split panes horizontal
+      bind-key \ split-window -v # Split panes vertically
       
 
       set -g status-position top
