@@ -23,15 +23,15 @@
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "FantasqueSansMono" ]; })
     pkgs.ranger
     pkgs.bat
-    pkgs.zoxide
     pkgs.htop
     pkgs.eza
     pkgs.dust
-   pkgs.dua
+    pkgs.dua
     pkgs.fd
     pkgs.bottom
     pkgs.just
     pkgs.glances
+    pkgs.autuin
     pkgs.alacritty
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -188,7 +188,11 @@
 
   programs.gitui.enable = true;
   programs.lazygit.enable = true;
-
+  programs.bash.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
