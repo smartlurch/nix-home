@@ -31,7 +31,7 @@
     pkgs.bottom
     pkgs.just
     pkgs.glances
-    pkgs.atuin
+    pkgs.tmuxifier
     pkgs.alacritty
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -75,6 +75,10 @@
      #EDITOR = "nvim";
   };
 
+  home.shellAliases = {
+    cd = "z"; 
+  }; 
+ 
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -190,6 +194,10 @@
   programs.lazygit.enable = true;
   programs.bash.enable = true;
   programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+  programs.atuin = {
     enable = true;
     enableBashIntegration = true;
   };
