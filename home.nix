@@ -76,7 +76,8 @@
   };
 
   home.shellAliases = {
-    cd = "z"; 
+    cd = "z";
+    ls = "eza";
   }; 
  
   programs.neovim = {
