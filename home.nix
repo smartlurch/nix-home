@@ -77,7 +77,7 @@
 
   home.shellAliases = {
     cd = "z";
-    ls = "eza";
+    ls = "eza -lah";
     homesw = "home-manager switch";
     df = "df -h";
   }; 
