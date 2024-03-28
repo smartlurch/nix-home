@@ -78,6 +78,8 @@
   home.shellAliases = {
     cd = "z";
     ls = "eza";
+    homesw = "home-manager switch"
+    df = "df -h"
   }; 
  
   programs.neovim = {
